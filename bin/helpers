@@ -1,0 +1,15 @@
+#!/bin/sh
+
+abortIfProjectFoldersExist() {
+  for folderName in *; do
+      if [[ -d "$folderName" ]]; then
+          echoAbortFolderAlreadyExists $folderName
+          exit 1
+      fi
+  done
+}
+
+echoAbortFolderAlreadyExists()
+{
+  echo "\nInstallation cancelled, folder $1 already exists"
+}

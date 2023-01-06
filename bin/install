@@ -1,0 +1,19 @@
+#!/bin/sh
+
+my_dir="$(dirname "$0")"
+
+# Load script dependencies
+source "$my_dir/config"
+source "$my_dir/helpers"
+
+read -p "You are about to become limitless. Continue? (yes/no): " -n 1 -r
+
+# Pre-validation
+echo "\nStarting installation..."
+echo "\nMaking sure the project can be installed..."
+abortIfProjectFoldersExist $PROJECT_GUI_FOLDER $PROJECT_API_FOLDER
+
+# Download git repositories
+echo "\nDownloading git repositories..."
+git clone git@github.com:condrici/limitless-gui.git
+git clone git@github.com:condrici/limitless-api.git
