@@ -2,7 +2,6 @@
 
 abortIfProjectFoldersExist() {
   for folderName in "$@"; do
-    echo $folderName
       if [[ -d "$folderName" ]]; then
           echoAbortFolderAlreadyExists $folderName
           exit 1
