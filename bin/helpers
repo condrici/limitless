@@ -1,7 +1,8 @@
 #!/bin/sh
 
 abortIfProjectFoldersExist() {
-  for folderName in *; do
+  for folderName in "$@"; do
+    echo $folderName
       if [[ -d "$folderName" ]]; then
           echoAbortFolderAlreadyExists $folderName
           exit 1
