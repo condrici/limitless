@@ -1,7 +1,4 @@
 #!/bin/sh
 
-CURRENT_FOLDER = "$(dirname "$0")"
-
-ROOT_FOLDER="$limitless"
 PROJECT_GUI_FOLDER="limitless-gui"
 PROJECT_API_FOLDER="limitless-api"
