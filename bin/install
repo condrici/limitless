@@ -16,8 +16,20 @@ abortIfProjectFoldersExist $PROJECT_GUI_FOLDER $PROJECT_API_FOLDER
 # Set installation path
 cd ${SCRIPT_ABSOLUTE_PATH} && cd ..
 INSTALLATION_PATH=$(pwd)
+INSTALLATION_PATH_GUI="${INSTALLATION_PATH}/${PROJECT_GUI_FOLDER}"
+INSTALLATION_PATH_API="${INSTALLATION_PATH}/${PROJECT_API_FOLDER}"
+
 echo "Installation path set to: ${INSTALLATION_PATH}"
 
 # Download git repositories
-git clone git@github.com:condrici/limitless-gui.git "${INSTALLATION_PATH}/${PROJECT_GUI_FOLDER}"
-git clone git@github.com:condrici/limitless-api.git "${INSTALLATION_PATH}/${PROJECT_API_FOLDER}"
+git clone git@github.com:condrici/limitless-gui.git "${INSTALLATION_PATH_GUI}"
+git clone git@github.com:condrici/limitless-api.git "${INSTALLATION_PATH_API}"
+
+echo "Preparing to fire up the docker containers..."
+
+# Run Docker setup
+cd "${INSTALLATION_PATH_API}" && docker-compose up -d
+cd "${INSTALLATION_PATH_GUI}" && docker-compose up -d
+
+echo "Installation complete"
+echo "Run docker logs <container name> to troubleshoot container issues"
