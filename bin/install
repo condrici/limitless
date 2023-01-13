@@ -1,10 +1,10 @@
 #!/bin/sh
 
-my_dir="$(dirname "$0")"
+SCRIPT_ABSOLUTE_PATH="$( cd -- "$(dirname "$0")" >/dev/null 2>&1 ; pwd -P )"
 
 # Load script dependencies
-source "$my_dir/config"
-source "$my_dir/helpers"
+source "$SCRIPT_ABSOLUTE_PATH/config"
+source "$SCRIPT_ABSOLUTE_PATH/helpers"
 
 read -p "You are about to become limitless. Continue? (yes/no): " -n 1 -r
 
@@ -13,7 +13,11 @@ echo "\nStarting installation..."
 echo "\nMaking sure the project can be installed..."
 abortIfProjectFoldersExist $PROJECT_GUI_FOLDER $PROJECT_API_FOLDER
 
+# Set installation path
+cd ${SCRIPT_ABSOLUTE_PATH} && cd ..
+INSTALLATION_PATH=$(pwd)
+echo "Installation path set to: ${INSTALLATION_PATH}"
+
 # Download git repositories
-echo "\nDownloading git repositories..."
-git clone git@github.com:condrici/limitless-gui.git
-git clone git@github.com:condrici/limitless-api.git
+git clone git@github.com:condrici/limitless-gui.git "${INSTALLATION_PATH}/${PROJECT_GUI_FOLDER}"
+git clone git@github.com:condrici/limitless-api.git "${INSTALLATION_PATH}/${PROJECT_API_FOLDER}"
