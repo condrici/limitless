@@ -15,7 +15,7 @@ read -p "You are about to become limitless. Continue? (yes/no): " -n 1 -r
 # Pre-validation
 printf "\nStarting installation..."
 printf "\nMaking sure the project can be installed..."
-abortIfProjectFoldersExist $PROJECT_GUI_FOLDER $PROJECT_API_FOLDER $PROJECT_ANALYTICS_FOLDER
+abortIfProjectFoldersExist "$PROJECT_GUI_FOLDER" "$PROJECT_API_FOLDER" "$PROJECT_ANALYTICS_FOLDER"
 
 # Set installation path
 cd "${SCRIPT_ABSOLUTE_PATH}" && cd ..
