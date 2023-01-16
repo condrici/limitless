@@ -1,11 +1,15 @@
 #!/bin/sh
 
+# shellcheck disable=SC2164
 SCRIPT_ABSOLUTE_PATH="$( cd -- "$(dirname "$0")" >/dev/null 2>&1 ; pwd -P )"
 
 # Load script dependencies
+# shellcheck disable=SC2039
 source "$SCRIPT_ABSOLUTE_PATH/config"
+# shellcheck disable=SC2039
 source "$SCRIPT_ABSOLUTE_PATH/helpers"
 
+# shellcheck disable=SC2039
 read -p "You are about to become limitless. Continue? (yes/no): " -n 1 -r
 
 # Pre-validation
