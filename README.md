@@ -11,3 +11,13 @@ Docker Compose
 
 ## Project Installation
 sh ./bin/install
+
+## Folder Structure
+
+### ./limitless-gui
+
+The GUI part of the application which is separated from the API
+
+### ./limitless-api
+
+The API that the GUI communicates with
