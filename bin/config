@@ -2,3 +2,4 @@
 
 PROJECT_GUI_FOLDER="limitless-gui"
 PROJECT_API_FOLDER="limitless-api"
+PROJECT_ANALYTICS_FOLDER="limitless-analytics"
