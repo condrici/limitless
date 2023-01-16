@@ -3,11 +3,22 @@
 # shellcheck disable=SC2164
 SCRIPT_ABSOLUTE_PATH="$( cd -- "$(dirname "$0")" >/dev/null 2>&1 ; pwd -P )"
 
-# Load script dependencies
+######################################
+#
+# Dependencies
+#
+######################################
+
 # shellcheck disable=SC2039
 source "$SCRIPT_ABSOLUTE_PATH/config"
 # shellcheck disable=SC2039
 source "$SCRIPT_ABSOLUTE_PATH/helpers"
+
+######################################
+#
+# Define installation paths
+#
+######################################
 
 # shellcheck disable=SC2039
 read -p "You are about to become limitless. Continue? (yes/no): " -n 1 -r
@@ -26,14 +37,24 @@ INSTALLATION_PATH_ANALYTICS="${INSTALLATION_PATH}/${PROJECT_ANALYTICS_FOLDER}"
 
 echo "Installation path set to: ${INSTALLATION_PATH}"
 
-# Download git repositories
+######################################
+#
+# Download GIT repositories
+#
+######################################
+
 git clone git@github.com:condrici/limitless-gui.git "${INSTALLATION_PATH_GUI}"
 git clone git@github.com:condrici/limitless-api.git "${INSTALLATION_PATH_API}"
 git clone git@github.com:condrici/limitless-analytics.git "${INSTALLATION_PATH_ANALYTICS}"
 
 echo "Preparing to fire up the docker containers..."
 
-# Run Docker setup
+######################################
+#
+# Deploy Docker containers
+#
+######################################
+
 cd "${INSTALLATION_PATH_API}" && docker-compose up -d
 cd "${INSTALLATION_PATH_GUI}" && docker-compose up -d
 cd "${INSTALLATION_PATH_ANALYTICS}" && docker-compose up -d
