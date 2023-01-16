@@ -11,5 +11,5 @@ abortIfProjectFoldersExist() {
 
 echoAbortFolderAlreadyExists()
 {
-  echo "\nInstallation cancelled, folder $1 already exists"
+  printf "\nInstallation cancelled, folder %s already exists" $1
 }

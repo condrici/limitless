@@ -9,8 +9,8 @@ source "$SCRIPT_ABSOLUTE_PATH/helpers"
 read -p "You are about to become limitless. Continue? (yes/no): " -n 1 -r
 
 # Pre-validation
-echo "\nStarting installation..."
-echo "\nMaking sure the project can be installed..."
+printf "\nStarting installation..."
+printf "\nMaking sure the project can be installed..."
 abortIfProjectFoldersExist $PROJECT_GUI_FOLDER $PROJECT_API_FOLDER $PROJECT_ANALYTICS_FOLDER
 
 # Set installation path
