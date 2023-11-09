@@ -1,35 +1,47 @@
 # Limitless
 Asset management application
 
-## Installation
+## Project Installation
 
-./bin/install-mac.sh
+### Pre-Requirements
 
-## Description
+Docker is the only pre-requirement.
 
-### limitless-gui (Web Graphical Interface)
+### Installation Steps
+
+Run the following command to install the project: ./bin/install-mac.sh
+
+## Project Description
+
+After the installation completes, the following dependencies will be installed:
+- limitless-gui (Web Graphical Interface, [external repository link](https://github.com/condrici/limitless-gui))
+- limitless-api (Web API Gateway, [external repository link](https://github.com/condrici/limitless-api))
+- limitless-analytics (Analytics, [external repository link](https://github.com/condrici/limitless-analytics))
+
+### limitless-gui
 
 Graphical interface that communicates solely with the 'limitless-api' for data retrieval and manipulation.
 
-Technology Stack: JavaScript, TypeScript, VueJS, Docker
+<ins>Stack</ins>: JavaScript, TypeScript, VueJS, Docker
 
-Coding Style: 
+<ins>Coding Style</ins>: 
 
-### limitless-api (Web API Gateway)
+### limitless-api
 
 Only gateway for accessing the functionality that resides in other repositories like 'limitless-analytics'.
 
-Technology Stack: PHP, Laravel, Docker
+<ins>Stack</ins>: PHP, Laravel, Docker
 
-Coding Style: Unit Testing, PSR Style Guide
+<ins>Coding Style</ins>: Unit Testing, PSR Style Guide
 
-### limitless-analytics (Analytics)
+### limitless-analytics
 
 Handles all the functionality related to scraping web data, like product prices from external websites.
 
-Technology Stack: Python, Docker
+<ins>Stack</ins>: Python, Flask API, Docker
 
-Coding Style: Unit Testing, PEP 8 Style Guide
+<ins>Coding Style</ins>: Unit Testing, PEP 8 Style Guide
+
 
 ## Host Access
 localhost:8081 (GUI) \
