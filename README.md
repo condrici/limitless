@@ -1,23 +1,36 @@
 # Limitless
-Simple asset management application.
+Asset management application
 
-This is the repository that handles the installation process.\
-The main project files are located in multiple other repositories.\
-Check the installation script (./bin/install) for more details.
+## Installation
 
-## Pre-requisites
-Docker\
-Docker Compose
+./bin/install-mac.sh
 
-## Project Installation
-sh ./bin/install
+## Description
 
-## Folder Structure
+### limitless-gui (Web Graphical Interface)
 
-### ./limitless-gui
+Graphical interface that communicates solely with the 'limitless-api' for data retrieval and manipulation.
 
-The GUI part of the application which is separated from the API
+Technology Stack: JavaScript, TypeScript, VueJS, Docker
 
-### ./limitless-api
+Coding Style: 
 
-The API that the GUI communicates with
+### limitless-api (Web API Gateway)
+
+Only gateway for accessing the functionality that resides in other repositories like 'limitless-analytics'.
+
+Technology Stack: PHP, Laravel, Docker
+
+Coding Style: Unit Testing, PSR Style Guide
+
+### limitless-analytics (Analytics)
+
+Handles all the functionality related to scraping web data, like product prices from external websites.
+
+Technology Stack: Python, Docker
+
+Coding Style: Unit Testing, PEP 8 Style Guide
+
+## Host Access
+localhost:8081 (GUI) \
+localhost:8082 (Analytics API)
