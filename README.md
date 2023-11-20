@@ -3,13 +3,9 @@ Asset management application
 
 ## Project Installation
 
-### Pre-Requirements
+1. Install Docker on your host machine
 
-Docker is the only pre-requirement.
-
-### Installation Steps
-
-Run the following command to install the project: ./bin/install-mac.sh
+2. Run command to install the project: ./bin/install-mac.sh
 
 ## Project Description
 
