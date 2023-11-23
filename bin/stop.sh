@@ -1,0 +1,27 @@
+#!/bin/sh
+
+######################################
+#
+# Dependencies
+#
+######################################
+
+# shellcheck disable=SC2164
+SCRIPT_ABSOLUTE_PATH="$( cd -- "$(dirname "$0")" >/dev/null 2>&1 ; pwd -P )"
+
+# shellcheck disable=SC2039
+source "$SCRIPT_ABSOLUTE_PATH/config.sh"
+
+######################################
+#
+# Start Docker Containers
+#
+######################################
+
+cd "${SCRIPT_ABSOLUTE_PATH}" && cd ..
+
+cd "${PATH_SERVICE_API}" && docker-compose down
+cd "${PATH_SERVICE_GUI}" && docker-compose down
+cd "${PATH_SERVICE_ANALYTICS}" && docker-compose down
+
+docker ps

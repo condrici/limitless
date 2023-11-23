@@ -17,6 +17,6 @@ After the installation completes, the following dependencies will be installed:
 ### Data Flow Diagram
 ![diagram-data-flow.png](documentation%2Fdiagram-data-flow.png)
 
-## Host Access
+## Developer Guide
 localhost:8081 (GUI) \
 localhost:8082 (Analytics API)
