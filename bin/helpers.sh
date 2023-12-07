@@ -6,12 +6,14 @@ abortIfProjectFoldersExist() {
   for folderName in "$@"; do
       # shellcheck disable=SC2039
       if [[ -d "$folderName" ]]; then
-          echoAbortFolderAlreadyExists "$folderName"
+          exit 0;
       fi
   done
-}
 
-echoAbortFolderAlreadyExists()
-{
-  printf "\nInstallation cancelled, folder %s already exists" "$1"
+  # shellcheck disable=SC2039
+  # shellcheck disable=SC2181
+  if [[ $? -eq 0 ]]; then
+      printf "\nInstallation cancelled, folder %s already exists\n" "$1"
+      exit 0
+  fi
 }
