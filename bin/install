@@ -10,10 +10,10 @@ SCRIPT_ABSOLUTE_PATH="$( cd -- "$(dirname "$0")" >/dev/null 2>&1 ; pwd -P )"
 ######################################
 
 # shellcheck disable=SC2039
-source "$SCRIPT_ABSOLUTE_PATH/config"
+source "$SCRIPT_ABSOLUTE_PATH/src/config"
 
 # shellcheck disable=SC2039
-source "$SCRIPT_ABSOLUTE_PATH/helpers"
+source "$SCRIPT_ABSOLUTE_PATH/src/helpers"
 
 ######################################
 #
