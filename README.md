@@ -3,20 +3,19 @@ Asset management application
 
 ## Project Installation
 
-1. Install Docker on your host machine
+1. Host pre-requirements: docker, git, sh
 
-2. Run command to install the project: ./bin/install-mac.sh
-
-## Project Description
+2. Run command to install the project: sh bin/install-mac.sh
 
 After the installation completes, the following dependencies will be installed:
 - limitless-gui (Web Graphical Interface, [external repository link](https://github.com/condrici/limitless-gui))
 - limitless-api (Web API Gateway, [external repository link](https://github.com/condrici/limitless-api))
 - limitless-analytics (Analytics, [external repository link](https://github.com/condrici/limitless-analytics))
 
-### Data Flow Diagram
-![diagram-data-flow.png](documentation%2Fdiagram-data-flow.png)
+## Console Commands
+- sh bin/install (Install project files)
+- sh bin/start (Start all Docker containers)
+- sh bin stop (Stop all Docker containers)
 
-## Developer Guide
-localhost:8081 (GUI) \
-localhost:8082 (Analytics API)
+## Data Flow Diagram
+![diagram-data-flow.png](documentation%2Fdiagram-data-flow.png)
