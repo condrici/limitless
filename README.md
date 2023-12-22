@@ -12,10 +12,29 @@ After the installation completes, the following dependencies will be installed:
 - limitless-api (Web API Gateway, [external repository link](https://github.com/condrici/limitless-api))
 - limitless-analytics (Analytics, [external repository link](https://github.com/condrici/limitless-analytics))
 
-## Console Commands
+## Developer Guide
+
+### Technologies Used
+- limitless-gui (JavaScript, VueJS)
+- limitless-api (PHP, Laravel)
+- limitless-analytics (Python, Flask API, BeautifulSoup)
+
+### Getting Started Commands
 - sh commands/install (Install project files)
 - sh commands/start (Start all Docker containers)
 - sh commands/stop (Stop all Docker containers)
+
+### Docker Commands
+- to be added
+
+### Access Points
+
+- Limitless GUI (localhost:8082)
+- Limitless API (localhost:8083)
+
+### Debugging
+
+- docker logs <container name> -f (live docker container logs)
 
 ## Data Flow Diagram
 ![diagram-data-flow.png](documentation%2Fdiagram-data-flow.png)
