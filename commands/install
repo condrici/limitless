@@ -44,17 +44,14 @@ git clone git@github.com:condrici/limitless-gui.git "${PATH_SERVICE_GUI}"
 git clone git@github.com:condrici/limitless-api.git "${PATH_SERVICE_API}"
 git clone git@github.com:condrici/limitless-analytics.git "${PATH_SERVICE_ANALYTICS}"
 
-######################################
-#
-# Start Docker containers
-#
-######################################
-
-printf "[STEP 3] Starting docker containers..."
-
-cd "${PATH_SERVICE_API}" && docker-compose up -d
-cd "${PATH_SERVICE_GUI}" && docker-compose up -d
-cd "${PATH_SERVICE_ANALYTICS}" && docker-compose up -d
-
 prtinf "Installation complete"
-prtinf "Run docker logs <container name> to troubleshoot container issues"
+prtinf "Run commands/start to start the Docker containers"
+
+######################################
+#
+# Installation
+# Some containers might have additional installation steps
+#
+######################################
+
+cd "${PATH_SERVICE_API}" && sh commands/install

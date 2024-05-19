@@ -15,19 +15,11 @@ source "$SCRIPT_ABSOLUTE_PATH/.src/config"
 ######################################
 #
 # Start Docker Containers
-# When the containers are started, Docker will execute the entrypoint files in each container
 #
 ######################################
 
 cd "${SCRIPT_ABSOLUTE_PATH}" && cd ..
 
-cd "${PATH_SERVICE_API}" && docker-compose up -d
-cd "${PATH_SERVICE_GUI}" && docker-compose up -d
-cd "${PATH_SERVICE_ANALYTICS}" && docker-compose up -d
+cd "${PATH_SERVICE_API}" && lnav laravel/storage/logs/laravel.log
 
 docker ps
-
-# shellcheck disable=SC2028
-echo "\nLimitless GUI (VueJS): localhost:8082"
-# shellcheck disable=SC2028
-echo "Limitless API (Laravel): localhost:8083\n"
