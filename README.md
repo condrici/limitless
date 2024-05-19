@@ -3,7 +3,7 @@ Asset management application
 
 ## Project Installation
 
-1. Host pre-requirements: docker, git, sh
+1. Host pre-requirements: docker, git, sh, lnav
 
 2. Run command to install the project: sh commands/install-mac.sh
 
@@ -34,7 +34,7 @@ After the installation completes, the following dependencies will be installed:
 
 ### Debugging
 
-- docker logs <container name> -f (live docker container logs)
+- sh commands/debug (simple log file aggregator that uses lnav)
 
 ## Data Flow Diagram
 ![diagram-data-flow.png](documentation%2Fdiagram-data-flow.png)
