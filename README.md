@@ -1,16 +1,20 @@
 # Limitless
 Asset management application
 
-## Project Installation
+## Project Components
 
-1. Host pre-requirements: docker, git, sh, lnav
-
-2. Run command to install the project: sh commands/install-mac.sh
-
-After the installation completes, the following dependencies will be installed:
+- limitless (Installation Repository)
 - limitless-gui (Web Graphical Interface, [external repository link](https://github.com/condrici/limitless-gui))
 - limitless-api (Web API Gateway, [external repository link](https://github.com/condrici/limitless-api))
 - limitless-analytics (Analytics, [external repository link](https://github.com/condrici/limitless-analytics))
+
+## Project Installation
+
+The project must be installed from the installation repository "limitless".
+
+1. Host pre-requirements: docker, git, sh, lnav
+
+2. From the "limitless" repostory, run command: sh commands/install-mac.sh
 
 ## Developer Guide
 
