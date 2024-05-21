@@ -1,27 +1,33 @@
 #!/bin/sh
-
-####################################################################
-####################################################################
-###
-### Configuration Settings
-###
-####################################################################
-####################################################################
+################################################################
+################################################################
+####
+#### Configuration File
+#### This file serves with the installation configuration
+####
+################################################################
+################################################################
 
 # shellcheck disable=SC2164
 CONFIG_FILE_ABSOLUTE_PATH="$( cd -- "$(dirname "$0")" >/dev/null 2>&1 ; pwd -P )"
 
 ################################
-#### Installation Paths
+#### Coonfiguration Settings
 ################################
 
+CONFIG_PARENT_FOLDER="src"
 CONFIG_GUI_FOLDER="limitless-gui"
 CONFIG_API_FOLDER="limitless-api"
 CONFIG_ANALYTICS_FOLDER="limitless-analytics"
 
+################################
+#### Installation Paths
+################################
+
 cd "${CONFIG_FILE_ABSOLUTE_PATH}" && cd ..
 
-PATH_CONFIG_FILE_FOLDER=$(pwd)
-PATH_SERVICE_GUI="${PATH_CONFIG_FILE_FOLDER}/${CONFIG_GUI_FOLDER}"
-PATH_SERVICE_API="${PATH_CONFIG_FILE_FOLDER}/${CONFIG_API_FOLDER}"
-PATH_SERVICE_ANALYTICS="${PATH_CONFIG_FILE_FOLDER}/${CONFIG_ANALYTICS_FOLDER}"
+INSTALLATION_PATH="$(pwd)/${CONFIG_PARENT_FOLDER}"
+
+PATH_SERVICE_GUI="${INSTALLATION_PATH}/${CONFIG_GUI_FOLDER}"
+PATH_SERVICE_API="${INSTALLATION_PATH}/${CONFIG_API_FOLDER}"
+PATH_SERVICE_ANALYTICS="${INSTALLATION_PATH}/${CONFIG_ANALYTICS_FOLDER}"

@@ -25,6 +25,7 @@ source "$SCRIPT_ABSOLUTE_PATH/.src/helpers"
 read -p "You are about to install the Limitless Project. Continue? (yes/no): " -n 1 -r
 
 printf "\n[STEP 1] Checking pre-requisites..."
+printf "$PATH_SERVICE_GUI"
 
 # Prevent installation if project is already installed
 abortIfProjectFoldersExist "$PROJECT_GUI_FOLDER" "$PROJECT_API_FOLDER" "$PROJECT_ANALYTICS_FOLDER"
