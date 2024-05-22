@@ -1,44 +1,36 @@
 # Limitless
 Asset management application
 
-## Project Components
+This is the central repository that will install all other components. Each project component will be placed under "src", in a separate folder. The "src" folder does not exist in the git repository, but it will be created locally, after running the installation script.
+
+## Getting Started
+
+#### Project Components
 
 - limitless (Installation Repository)
-- limitless-gui (Web Graphical Interface, [external repository link](https://github.com/condrici/limitless-gui))
-- limitless-api (Web API Gateway, [external repository link](https://github.com/condrici/limitless-api))
-- limitless-analytics (Analytics, [external repository link](https://github.com/condrici/limitless-analytics))
+- limitless-gui (Web Graphical Interface, JavaScript/VueJS, [repository link](https://github.com/condrici/limitless-gui))
+- limitless-api (Web API Gateway, PHP/Laravel, [repository link](https://github.com/condrici/limitless-api))
+- limitless-analytics (Analytics, Python/Flask API/BeautifulSoup, [repository link](https://github.com/condrici/limitless-analytics))
 
-## Project Installation
+#### Installation Requirements
+- Docker (needed for the infrastructure)
+- Lnav utility (used for aggregating log files)
+- Bash utility (for various scripts)
 
-The project must be installed from the installation repository "limitless".
+#### Installation Steps
+- From the "limitless" repostory, run command: sh commands/install
 
-1. Host pre-requirements: docker, git, sh, lnav
+## Commands
 
-2. From the "limitless" repostory, run command: sh commands/install-mac.sh
-
-## Developer Guide
-
-### Technologies Used
-- limitless-gui (JavaScript, VueJS)
-- limitless-api (PHP, Laravel)
-- limitless-analytics (Python, Flask API, BeautifulSoup)
-
-### Getting Started Commands
 - sh commands/install (Install project files)
 - sh commands/start (Start all Docker containers)
 - sh commands/stop (Stop all Docker containers)
 
-### Docker Commands
-- to be added
-
-### Access Points
+## Access Points
 
 - Limitless GUI (localhost:8082)
 - Limitless API (localhost:8083)
-
-### Debugging
-
-- sh commands/debug (simple log file aggregator that uses lnav)
+- Limitless ANALYTICS (localhost:8081)
 
 ## Data Flow Diagram
 ![diagram-data-flow.png](documentation%2Fdiagram-data-flow.png)
