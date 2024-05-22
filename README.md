@@ -25,6 +25,7 @@ This is the central repository that will install all other components. Each proj
 - sh commands/install (Install project files)
 - sh commands/start (Start all Docker containers)
 - sh commands/stop (Stop all Docker containers)
+- sh commands/log (Listen to aggregated log files across containers)
 
 ## Access Points
 

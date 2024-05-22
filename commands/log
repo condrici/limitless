@@ -12,14 +12,18 @@ SCRIPT_ABSOLUTE_PATH="$( cd -- "$(dirname "$0")" >/dev/null 2>&1 ; pwd -P )"
 # shellcheck disable=SC2039
 source "$SCRIPT_ABSOLUTE_PATH/.src/config"
 
-######################################
-#
-# Start Docker Containers
-#
-######################################
-
 cd "${SCRIPT_ABSOLUTE_PATH}" && cd ..
 
-cd "${PATH_SERVICE_API}" && lnav laravel/storage/logs/laravel.log
+######################################
+#
+# Listen to log files
+#
+######################################
+
+tail -f \
+"${PATH_SERVICE_API}/laravel/storage/logs/laravel.log" \
+"${PATH_SERVICE_API}/docker/volumes/nginx/access.log" \
+"${PATH_SERVICE_API}/docker/volumes/nginx/error.log" \
+"${PATH_SERVICE_ANALYTICS}/logs/application.log"
 
 docker ps
