@@ -22,13 +22,14 @@ source "$SCRIPT_ABSOLUTE_PATH/.src/helpers"
 ######################################
 
 # shellcheck disable=SC2039
+printf "\n\n"
 read -p "You are about to install the Limitless Project. Continue? (yes/no): " -n 1 -r
 
-printf "\n[STEP 1] Checking pre-requisites..."
-printf "$PATH_SERVICE_GUI"
+printf "\n\n"
+printf "[STEP 1] Checking pre-requisites..."
 
 # Prevent installation if project is already installed
-abortIfProjectFoldersExist "$PROJECT_GUI_FOLDER" "$PROJECT_API_FOLDER" "$PROJECT_ANALYTICS_FOLDER"
+abortIfProjectFoldersExist "$PATH_SERVICE_GUI" "$PATH_SERVICE_API" "$PATH_SERVICE_ANALYTICS"
 
 ######################################
 #
@@ -36,17 +37,19 @@ abortIfProjectFoldersExist "$PROJECT_GUI_FOLDER" "$PROJECT_API_FOLDER" "$PROJECT
 #
 ######################################
 
-printf "[STEP 2] Downloading project files..."
+printf "\n[STEP 2] Downloading project files..."
 
 # Move on level up
 cd "${SCRIPT_ABSOLUTE_PATH}" && cd ..
 
+printf "\n\nCloning LIMITLESS GUI..."
 git clone git@github.com:condrici/limitless-gui.git "${PATH_SERVICE_GUI}"
-git clone git@github.com:condrici/limitless-api.git "${PATH_SERVICE_API}"
-git clone git@github.com:condrici/limitless-analytics.git "${PATH_SERVICE_ANALYTICS}"
 
-prtinf "Installation complete"
-prtinf "Run commands/start to start the Docker containers"
+printf "\nCloning LIMITLESS API ..."
+git clone git@github.com:condrici/limitless-api.git "${PATH_SERVICE_API}"
+
+printf "\nCloning LIMITLESS ANALYTICS ..."
+git clone git@github.com:condrici/limitless-analytics.git "${PATH_SERVICE_ANALYTICS}"
 
 ######################################
 #
@@ -55,4 +58,11 @@ prtinf "Run commands/start to start the Docker containers"
 #
 ######################################
 
+printf "\n[STEP 3] Running project scripts..."
+
+printf "\nRunning LIMITLESS API scripts...\n"
 cd "${PATH_SERVICE_API}" && sh commands/install
+
+printf "\n[DONE] Installation complete"
+printf "\nRun commands/start to start the Docker containers"
+printf "\n\n"

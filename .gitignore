@@ -1,7 +1,5 @@
 # Editor
 .idea/
 
-# Project folders
-limitless-gui/
-limitless-api/
-limitless-analytics/
+# Project Installation Location
+src/
