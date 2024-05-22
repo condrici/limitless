@@ -28,6 +28,8 @@ cd "${PATH_SERVICE_ANALYTICS}" && docker-compose up -d
 docker ps
 
 # shellcheck disable=SC2028
-echo "\nLimitless GUI (VueJS): localhost:8082"
+echo "\nLimitless GUI (VueJS, JavaScript): localhost:8082"
 # shellcheck disable=SC2028
-echo "Limitless API (Laravel): localhost:8083\n"
+echo "Limitless API (Laravel, PHP): localhost:8083"
+# shellcheck disable=SC2028
+echo "Limitless ANALYTICS (Python): localhost:8081\n"
