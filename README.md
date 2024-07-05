@@ -10,6 +10,7 @@ This is the central repository that will install all other components. Each proj
 - limitless (Installation Repository)
 - limitless-gui (Web Graphical Interface, JavaScript/VueJS, [repository link](https://github.com/condrici/limitless-gui))
 - limitless-api (Web API Gateway, PHP/Laravel, [repository link](https://github.com/condrici/limitless-api))
+- limitless-assets (Asset Management, PHP/Laravel, [repository link](https://github.com/condrici/limitless-assets))
 - limitless-analytics (Analytics, Python/Flask API/BeautifulSoup, [repository link](https://github.com/condrici/limitless-analytics))
 
 #### Installation Requirements
@@ -31,6 +32,7 @@ This is the central repository that will install all other components. Each proj
 
 - Limitless GUI (localhost:8082)
 - Limitless API (localhost:8083)
+- Limitless ASSETS (localhost:8100)
 - Limitless ANALYTICS (localhost:8081)
 
 ## Data Flow Diagram
