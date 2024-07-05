@@ -48,6 +48,9 @@ git clone git@github.com:condrici/limitless-gui.git "${PATH_SERVICE_GUI}"
 printf "\nCloning LIMITLESS API ..."
 git clone git@github.com:condrici/limitless-api.git "${PATH_SERVICE_API}"
 
+printf "\nCloning LIMITLESS ASSETS ..."
+git clone git@github.com:condrici/limitless-assets.git "${PATH_SERVICE_ASSETS}"
+
 printf "\nCloning LIMITLESS ANALYTICS ..."
 git clone git@github.com:condrici/limitless-analytics.git "${PATH_SERVICE_ANALYTICS}"
 
@@ -62,6 +65,9 @@ printf "\n[STEP 3] Running project scripts..."
 
 printf "\nRunning LIMITLESS API scripts...\n"
 cd "${PATH_SERVICE_API}" && sh commands/install
+
+printf "\nRunning LIMITLESS ASSETS scripts...\n"
+cd "${PATH_SERVICE_ASSETS}" && sh commands/install
 
 printf "\n[DONE] Installation complete"
 printf "\nRun commands/start to start the Docker containers"
