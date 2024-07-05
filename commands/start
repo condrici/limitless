@@ -23,6 +23,7 @@ cd "${SCRIPT_ABSOLUTE_PATH}" && cd ..
 
 cd "${PATH_SERVICE_API}" && docker-compose up -d
 cd "${PATH_SERVICE_GUI}" && docker-compose up -d
+cd "${PATH_SERVICE_ASSETS}" && docker-compose up -d
 cd "${PATH_SERVICE_ANALYTICS}" && docker-compose up -d
 
 docker ps

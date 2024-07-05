@@ -22,6 +22,7 @@ cd "${SCRIPT_ABSOLUTE_PATH}" && cd ..
 
 cd "${PATH_SERVICE_API}" && docker-compose down
 cd "${PATH_SERVICE_GUI}" && docker-compose down
+cd "${PATH_SERVICE_ASSETS}" && docker-compose down
 cd "${PATH_SERVICE_ANALYTICS}" && docker-compose down
 
 docker ps

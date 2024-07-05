@@ -24,6 +24,9 @@ tail -f \
 "${PATH_SERVICE_API}/laravel/storage/logs/laravel.log" \
 "${PATH_SERVICE_API}/docker/volumes/nginx/access.log" \
 "${PATH_SERVICE_API}/docker/volumes/nginx/error.log" \
+"${PATH_SERVICE_ASSETS}/laravel/storage/logs/laravel.log" \
+"${PATH_SERVICE_ASSETS}/docker/volumes/nginx/access.log" \
+"${PATH_SERVICE_ASSETS}/docker/volumes/nginx/error.log" \
 "${PATH_SERVICE_ANALYTICS}/logs/application.log"
 
 docker ps
