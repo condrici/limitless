@@ -33,4 +33,6 @@ echo "\nLimitless GUI (VueJS, JavaScript): localhost:8082"
 # shellcheck disable=SC2028
 echo "Limitless API (Laravel, PHP): localhost:8083"
 # shellcheck disable=SC2028
+echo "Limitless ASSETS (Laravel, PHP): localhost:8100"
+# shellcheck disable=SC2028
 echo "Limitless ANALYTICS (Python): localhost:8081\n"
