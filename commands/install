@@ -5,7 +5,7 @@ SCRIPT_ABSOLUTE_PATH="$( cd -- "$(dirname "$0")" >/dev/null 2>&1 ; pwd -P )"
 
 ######################################
 #
-# Dependencies
+# Step 0: Load Dependencies
 #
 ######################################
 
@@ -17,7 +17,7 @@ source "$SCRIPT_ABSOLUTE_PATH/.src/helpers"
 
 ######################################
 #
-# Check pre-requisites
+# Step 1: Check pre-requisites
 #
 ######################################
 
@@ -33,7 +33,7 @@ abortIfProjectFoldersExist "$PATH_SERVICE_GUI" "$PATH_SERVICE_API" "$PATH_SERVIC
 
 ######################################
 #
-# Download GIT repositories
+# Step 2: Download GIT repositories
 #
 ######################################
 
@@ -56,8 +56,7 @@ git clone git@github.com:condrici/limitless-analytics.git "${PATH_SERVICE_ANALYT
 
 ######################################
 #
-# Installation
-# Some containers might have additional installation steps
+# Step 3: Project Installation
 #
 ######################################
 
@@ -71,7 +70,7 @@ cd "${PATH_SERVICE_ASSETS}" && sh commands/install
 
 ######################################
 #
-# DONE
+# Step 4: Finish
 #
 ######################################
 
