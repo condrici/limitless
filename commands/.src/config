@@ -12,7 +12,7 @@
 CONFIG_FILE_ABSOLUTE_PATH="$( cd -- "$(dirname "$0")" >/dev/null 2>&1 ; pwd -P )"
 
 ################################
-#### Coonfiguration Settings
+#### Configuration Settings
 ################################
 
 CONFIG_PARENT_FOLDER="src"
