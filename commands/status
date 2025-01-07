@@ -17,63 +17,18 @@ source "$SCRIPT_ABSOLUTE_PATH/.src/helpers"
 
 ######################################
 #
-# Step 1: Check pre-requisites
+# Step 0: Recursive git status
 #
 ######################################
 
-# shellcheck disable=SC2039
-printf "\n\n"
-read -p "You are about to install the Limitless Project. Continue? (yes/no): " -n 1 -r
+echo "\n${YELLOW}Git Status: API${NC}\n"
+cd "${PATH_SERVICE_API}" && git status
 
-printf "\n\n"
-printf "[STEP 1] Checking pre-requisites..."
+echo "\n${YELLOW}Git Status: GUI${NC}\n"
+cd "${PATH_SERVICE_GUI}" && git status
 
-# Prevent installation if project is already installed
-abortIfProjectFoldersExist "$PATH_SERVICE_GUI" "$PATH_SERVICE_API" "$PATH_SERVICE_ANALYTICS" "$PATH_SERVICE_ASSETS"
+echo "\n${YELLOW}Git Status: ASSETS${NC}\n"
+cd "${PATH_SERVICE_ASSETS}" && git status
 
-######################################
-#
-# Step 2: Download GIT repositories
-#
-######################################
-
-printf "\n[STEP 2] Downloading project files..."
-
-# Move on level up
-cd "${SCRIPT_ABSOLUTE_PATH}" && cd ..
-
-printf "\n\nCloning LIMITLESS GUI..."
-git clone git@github.com:condrici/limitless-gui.git "${PATH_SERVICE_GUI}"
-
-printf "\nCloning LIMITLESS API ..."
-git clone git@github.com:condrici/limitless-api.git "${PATH_SERVICE_API}"
-
-printf "\nCloning LIMITLESS ASSETS ..."
-git clone git@github.com:condrici/limitless-assets.git "${PATH_SERVICE_ASSETS}"
-
-printf "\nCloning LIMITLESS ANALYTICS ..."
-git clone git@github.com:condrici/limitless-analytics.git "${PATH_SERVICE_ANALYTICS}"
-
-######################################
-#
-# Step 3: Project Installation
-#
-######################################
-
-printf "\n[STEP 3] Running project scripts..."
-
-printf "\nRunning LIMITLESS API scripts...\n"
-cd "${PATH_SERVICE_API}" && sh commands/install
-
-printf "\nRunning LIMITLESS ASSETS scripts...\n"
-cd "${PATH_SERVICE_ASSETS}" && sh commands/install
-
-######################################
-#
-# Step 4: Finish
-#
-######################################
-
-printf "\n[DONE] Installation complete"
-printf "\nRun commands/start to start the Docker containers"
-printf "\n\n"
+echo "\n${YELLOW}Git Status: ANALYTICS${NC}\n"
+cd "${PATH_SERVICE_ANALYTICS}" && git status
