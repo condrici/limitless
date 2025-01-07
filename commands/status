@@ -17,12 +17,12 @@ source "$SCRIPT_ABSOLUTE_PATH/.src/helpers"
 
 ######################################
 #
-# Step 0: Recursive git status
+# Step 1: Recursive git status
 #
 ######################################
 
 echo "\n${YELLOW}Git Status: API${NC}\n"
-cd "${PATH_SERVICE_API}" && git status
+cd "${PATH_SERVICE_API}" && git rev-parse --abbrev-ref HEAD && git status
 
 echo "\n${YELLOW}Git Status: GUI${NC}\n"
 cd "${PATH_SERVICE_GUI}" && git status
