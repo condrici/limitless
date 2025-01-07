@@ -1,0 +1,79 @@
+#!/bin/sh
+
+# shellcheck disable=SC2164
+SCRIPT_ABSOLUTE_PATH="$( cd -- "$(dirname "$0")" >/dev/null 2>&1 ; pwd -P )"
+
+######################################
+#
+# Step 0: Load Dependencies
+#
+######################################
+
+# shellcheck disable=SC2039
+source "$SCRIPT_ABSOLUTE_PATH/.src/config"
+
+# shellcheck disable=SC2039
+source "$SCRIPT_ABSOLUTE_PATH/.src/helpers"
+
+######################################
+#
+# Step 1: Check pre-requisites
+#
+######################################
+
+# shellcheck disable=SC2039
+printf "\n\n"
+read -p "You are about to install the Limitless Project. Continue? (yes/no): " -n 1 -r
+
+printf "\n\n"
+printf "[STEP 1] Checking pre-requisites..."
+
+# Prevent installation if project is already installed
+abortIfProjectFoldersExist "$PATH_SERVICE_GUI" "$PATH_SERVICE_API" "$PATH_SERVICE_ANALYTICS" "$PATH_SERVICE_ASSETS"
+
+######################################
+#
+# Step 2: Download GIT repositories
+#
+######################################
+
+printf "\n[STEP 2] Downloading project files..."
+
+# Move on level up
+cd "${SCRIPT_ABSOLUTE_PATH}" && cd ..
+
+printf "\n\nCloning LIMITLESS GUI..."
+git clone git@github.com:condrici/limitless-gui.git "${PATH_SERVICE_GUI}"
+
+printf "\nCloning LIMITLESS API ..."
+git clone git@github.com:condrici/limitless-api.git "${PATH_SERVICE_API}"
+
+printf "\nCloning LIMITLESS ASSETS ..."
+git clone git@github.com:condrici/limitless-assets.git "${PATH_SERVICE_ASSETS}"
+
+printf "\nCloning LIMITLESS ANALYTICS ..."
+git clone git@github.com:condrici/limitless-analytics.git "${PATH_SERVICE_ANALYTICS}"
+
+######################################
+#
+# Step 3: Project Installation
+#
+######################################
+
+printf "\n[STEP 3] Running project scripts..."
+
+printf "\nRunning LIMITLESS API scripts...\n"
+cd "${PATH_SERVICE_API}" && sh commands/install
+
+printf "\nRunning LIMITLESS ASSETS scripts...\n"
+cd "${PATH_SERVICE_ASSETS}" && sh commands/install
+
+######################################
+#
+# Step 4: Finish
+#
+######################################
+
+printf "\n[DONE] Installation complete"
+printf "\nRun commands/start to start the Docker containers"
+printf "\n\n"
