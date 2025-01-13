@@ -22,7 +22,7 @@ source "$SCRIPT_ABSOLUTE_PATH/.src/helpers"
 ######################################
 
 echo "\n${YELLOW}Git Status: API${NC}\n"
-cd "${PATH_SERVICE_API}" && git rev-parse --abbrev-ref HEAD && git status
+cd "${PATH_SERVICE_API}" && git status
 
 echo "\n${YELLOW}Git Status: GUI${NC}\n"
 cd "${PATH_SERVICE_GUI}" && git status
